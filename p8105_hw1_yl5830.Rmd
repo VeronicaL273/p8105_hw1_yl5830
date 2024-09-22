@@ -20,6 +20,9 @@ data("penguins", package = "palmerpenguins")
 describe the dataset from several aspects, including the head of the dataframe using head() function, the size of the dataframe using nrow() & ncol() and also the mean flipper length using mean() function.
 ```{r}
 head(penguins)
+num_rows = nrow(penguins)
+num_cols = ncol(penguins)
+cat("The dataset has", num_rows, "rows and", num_cols, "columns.\n")
 ```
 
 
