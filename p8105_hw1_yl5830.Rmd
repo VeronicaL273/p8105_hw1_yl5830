@@ -6,7 +6,7 @@ output: github_document
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
-library(tidyverse)
+
 ```
 
 ## Question1
@@ -17,12 +17,19 @@ data("penguins", package = "palmerpenguins")
 ```
 
 ### 2.Describe the penguins dataset
-describe the dataset from several aspects, including the head of the dataframe using head() function, the size of the dataframe using nrow() & ncol() and also the mean flipper length using mean() function.
+describe the dataset from several aspects, including the head of the dataframe using head() function, the size of the dataframe using nrow() & ncol().
+In addition,calcute the mean of flipper_length_mm using mean() function.(Note: already exclude all the possible missing numbers in thr column of flipper_length_mm )
+
 ```{r}
-head(penguins)
+head(penguins,5)
+
 num_rows = nrow(penguins)
 num_cols = ncol(penguins)
 cat("The dataset has", num_rows, "rows and", num_cols, "columns.\n")
+
+
+mean_flipper_length = mean(penguins$flipper_length_mm, na.rm = TRUE)
+cat("The mean flipper length is", mean_flipper_length, "mm.\n")
 ```
 
-
+### 3. Scatterplot of flipper_length_mm (y) vs bill_length_mm (x) with color points using the species variable
