@@ -1,0 +1,25 @@
+---
+title: "p8105_hw1_yl5830"
+author: "Yunjia Liu"
+date: "2024-09-21"
+output: github_document
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+## Question1
+
+### 1.Load the penguins dataset
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+### 2.Describe the penguins dataset
+describe the dataset from several aspects, including the head of the dataframe using head() function, the size of the dataframe using nrow() & ncol() and also the mean flipper length using mean() function.
+```{r}
+head(penguins)
+```
+
+
