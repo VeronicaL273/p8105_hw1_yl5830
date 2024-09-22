@@ -34,23 +34,23 @@ cat("The mean flipper length is", mean_flipper_length, "mm.\n")
 ```
 
 ### 3. Scatterplot of flipper_length_mm (y) vs bill_length_mm (x) with color points using the species variable
-
 3.1 Remove rows with missing values to avoid errors in plotting
-```{r}
-penguins_df_clean = na.omit(penguins_df)
-```
 
 3.2 Draw the scatterplot of flipper_length_mm vs bill_length_mm
 ```{r}
-flipper_length_mm, color = species)) +
+penguins_df_clean = na.omit(penguins_df)
+
+```
+3.2 Draw the scatterplot of flipper_length_mm vs bill_length_mm
+```{r}
+scatterplot_flipper_bill = ggplot(penguins_df_clean, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
   geom_point() +
   labs(x = "Bill Length (mm)", y = "Flipper Length (mm)", title = "Flipper Length vs Bill Length by Species") +
   theme_minimal()
 
 print(scatterplot_flipper_bill)
 ```
-
-3.3 save the plot to the working directory
+3.3 Save the scatterplot
 ```{r}
 ggsave(filename = "flipper_vs_bill_length_plot.png", plot = scatterplot_flipper_bill, width = 8, height = 6)
 ```
